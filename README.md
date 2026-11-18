@@ -2,7 +2,7 @@
 
 Case study of a procurement analysis workspace linked to a sales CRM for the landscaping industry.
 
-**Zakres publiczny:** Studium przypadku wdrożenia.
+**Zakres publiczny:** studium przypadku wdrożenia, fragment obliczeń oferty i testy.
 
 ## Problem
 
@@ -21,4 +21,10 @@ React, TypeScript, FastAPI, Pydantic, SQLAlchemy, SQLite WAL, APScheduler, Ollam
 
 ## Co można sprawdzić
 
-Repozytorium prezentuje architekturę wdrożenia. Publiczne demo procesu CRM z fikcyjnymi danymi znajduje się w [All Day OS](https://github.com/AlexDzien/all-day-os).
+W `offer_math.py` znajduje się wydzielona wersja obliczenia pozycji oferty. Kwoty zapisuje w groszach, rozlicza rabat pozycji i rabat całej oferty w ustalonej kolejności, a następnie nalicza VAT od kwoty po rabatach. To ułatwia uzgodnienie kwot w podglądzie z zapisanym dokumentem.
+
+```bash
+python -m unittest discover -s tests
+```
+
+Publiczne demo procesu CRM z fikcyjnymi danymi znajduje się w [All Day OS](https://github.com/AlexDzien/all-day-os).
